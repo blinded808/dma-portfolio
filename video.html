@@ -110,17 +110,36 @@ p {
     padding: 10px;
 }
 
-.video-player {
-    display: flex;
-    justify-content: center;
-    margin: 30px 0;
+.video-button {
+
+    display:inline-block;
+
+    margin-top:15px;
+
+    padding:12px 24px;
+
+    background:#13092D;
+
+    color:#0ffff0;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    border:2px solid #0ffff0;
+
+    transition:.3s;
 }
 
-#featuredVideo {
-    width: 100%;
-    max-width: 900px;
-    border: 2px solid #0ffff0;
-    background: black;
+.video-button:hover {
+
+    background:#0ffff0;
+
+    color:#080c21;
+
+    transform:scale(1.05);
+
+    cursor:url('pointer.png'),pointer;
 }
 
 .gallery {
@@ -233,58 +252,77 @@ Select one of the video projects to view it in the player.
 <h1>Video Art</h1>
 
 
-<div class="video-player">
-
-<video id="featuredVideo" controls>
-<source src="videos/video1.mp4" type="video/mp4">
-</video>
-
-</div>
-
 <div class="gallery">
 
-<div class="video-card"
-onclick="window open('https://drive.google.com/file/d/1RHb31u_P3NGii9S3zSnz_9CwBF0SsdAQ/view?usp=sharing)">
+ <div class="video-card">
 
-<h3>Untitled (2026)</h3>
+        <h3>Untitled (2026)</h3>
 
-<p>
-Work for Art 75, I went to different locations to record nature and arrange them into
-to story mimicing a nature documentary, by experimenting with transitions, audio and working
-in Adobe Premiere. 
-</p>
+        <p>
+        Work for Art 75. I visited different locations and
+        recorded nature footage, arranging the clips into
+        a story that mimics a nature documentary through
+        transitions, audio, and editing in Adobe Premiere.
+        </p>
 
-</div>
+        <a
+        href="https://drive.google.com/file/d/1RHb31u_P3NGii9S3zSnz_9CwBF0SsdAQ/view?usp=sharing"
+        target="_blank"
+        class="video-button">
 
-<div class="video-card"
-onclick="changeVideo('https://drive.google.com/file/d/1yzagy2hYUSk3KnohsbvhpkGyJv0INal9/view?usp=sharing')">
+        Watch Video
 
+        </a>
 
-<h3>A Keepsake (2026) </h3>
+    </div>
 
-<p>
-For this assignment made for Art 75, I decided to make a memorial video of a trip that I went 
-with my friend with to Japan. All the vidoes have been recorded personally and I used the song Passenger's Side by
-Smallpools. I wanted to create kind of a music video combining all the memories documented to
-be something memorable to look back on.
-</p>
+    <!-- VIDEO 2 -->
 
-</div>
+    <div class="video-card">
 
-<div class="video-card"
-onclick="changeVideo('https://drive.google.com/file/d/1IkYnnqpUGALHU5PW0Dm08ESopO3iOwoJ/view?usp=sharing')">
+        <h3>A Keepsake (2026)</h3>
 
+        <p>
+        Created for Art 75, this memorial video documents a
+        trip to Japan with my friend. All footage was recorded
+        personally and edited into a music-video format using
+        Passenger's Side by Smallpools.
+        </p>
 
-<h3>Our Ecosystem (2026)</h3>
+        <a
+        href="https://drive.google.com/file/d/1yzagy2hYUSk3KnohsbvhpkGyJv0INal9/view?usp=sharing"
+        target="_blank"
+        class="video-button">
 
-<p>
-Made for Art 75, I have took videos from Pexel and Pixabay to make 
-a film documenting the different aspects of our environment with a transitional video and 
-ambience music. My goal was to try to make the videos feel like the transitons 
-connected to one another in Adobe Premiere. 
-</p>
+        Watch Video
 
-</div>
+        </a>
+
+    </div>
+
+    <!-- VIDEO 3 -->
+
+    <div class="video-card">
+
+        <h3>Our Ecosystem (2026)</h3>
+
+        <p>
+        Created for Art 75 using video assets from Pexels
+        and Pixabay. This experimental film explores environmental
+        storytelling through transitions, ambience, and editing
+        techniques developed in Adobe Premiere.
+        </p>
+
+        <a
+        href="https://drive.google.com/file/d/1IkYnnqpUGALHU5PW0Dm08ESopO3iOwoJ/view?usp=sharing"
+        target="_blank"
+        class="video-button">
+
+        Watch Video
+
+        </a>
+
+    </div>
 
 </div>
 
