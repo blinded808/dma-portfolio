@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.js"></script>
+
+<style>
+body{
+    margin:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background:#080c21;
+}
+
+canvas{
+    border:2px solid #0ffff0;
+}
+</style>
+
+</head>
+
+<body>
+
+<script>
+
+let penguins = [];
+let penguinCount = 15;
+
+function setup() {
+
+    createCanvas(700, 600);
+    angleMode(DEGREES);
+
+    for(let i = 0; i < penguinCount; i++){
+
+        penguins.push(
+            new Penguin(
+                random(60, width - 60),
+                random(60, height - 60),
+                random(-2, 2),
+                random(-2, 2),
+                random(360),
+                random(0.7, 1.2),
+                color(
+                    random(255),
+                    random(255),
+                    random(255)
+                )
+            )
+        );
+
+    }
+}
+
+function draw() {
+
+    background(173, 216, 230);
+
+    fill(0);
+    textSize(16);
+
+    text("Penguins: " + penguins.length, 15, 25);
+
+    text("Click = Add Penguin", 15, 50);
+    text("A = Faster Spin", 15, 75);
+    text("S = Slow Spin", 15, 100);
+    text("D = Random Size", 15, 125);
+    text("C = Random Colors", 15, 150);
+    text("X = Remove Penguin", 15, 175);
+    text("R = Reset Penguins", 15, 200);
+
+    for(let p of penguins){
+        p.move();
+        p.bounce();
+        p.display();
+    }
+}
+
+function mousePressed() {
+
+    penguins.push(
+
+        new Penguin(
+            mouseX,
+            mouseY,
+            random(-2, 2),
+            random(-2, 2),
+            random(360),
+            random(0.7, 1.2),
+            color(
+                random(255),
+                random(255),
+                random(255)
+            )
+        )
+
+    );
+
+}
+
+function keyPressed() {
+
+    if(key === 'A' || key === 'a'){
+        for(let p of penguins){
+            p.spinMore();
+        }
+    }
+
+    if(key === 'S' || key === 's'){
+        for(let p of penguins){
+            p.slowSpin();
+        }
+    }
+
+    if(key === 'D' || key === 'd'){
+        for(let p of penguins){
+            p.changeScale();
+        }
+    }
+
+    if(key === 'C' || key === 'c'){
+        for(let p of penguins){
+            p.changeColor();
+        }
+    }
+
+    if(key === 'X' || key === 'x'){
+
+        if(penguins.length > 1){
+            penguins.pop();
+        }
+
+    }
+
+    if(key === 'R' || key === 'r'){
+
+        penguins = [];
+
+        for(let i = 0; i < penguinCount; i++){
+
+            penguins.push(
+                new Penguin(
+                    random(60, width - 60),
+                    random(60, height - 60),
+                    random(-2, 2),
+                    random(-2, 2),
+                    random(360),
+                    random(0.7, 1.2),
+                    color(
+                        random(255),
+                        random(255),
+                        random(255)
+                    )
+                )
+            );
+
+        }
+
+    }
+
+}
+
+class Penguin {
+
+    constructor(x, y, sx, sy, rot, sc, bodycolor){
+
+        this.pos = createVector(x, y);
+        this.vel = createVector(sx, sy);
+
+        this.rot = rot;
+
+        this.rotSpeed = random(-0.5, 0.5);
+
+        this.sc = sc;
+
+        this.bodycolor = bodycolor;
+
+    }
+
+    move(){
+
+        this.pos.add(this.vel);
+
+        this.rot += this.rotSpeed;
+
+    }
+
+    bounce(){
+
+        if(this.pos.x < 40 || this.pos.x > width - 40){
+            this.vel.x *= -1;
+        }
+
+        if(this.pos.y < 40 || this.pos.y > height - 40){
+            this.vel.y *= -1;
+        }
+
+    }
+
+    display(){
+
+        push();
+
+        translate(this.pos.x, this.pos.y);
+
+        rotate(this.rot);
+
+        scale(this.sc);
+
+        this.drawPenguin();
+
+        pop();
+
+    }
+
+    drawPenguin(){
+
+        fill(this.bodycolor);
+        ellipse(0, 0, 40, 50);
+
+        fill(255);
+        ellipse(0, 5, 25, 30);
+
+        fill(this.bodycolor);
+        ellipse(0, -25, 30, 30);
+
+        fill(255);
+        ellipse(-5, -28, 6, 6);
+        ellipse(5, -28, 6, 6);
+
+        fill(0);
+        ellipse(-5, -28, 2, 2);
+        ellipse(5, -28, 2, 2);
+
+        fill(255, 174, 66);
+        triangle(-3, -20, 3, -20, 0, -15);
+
+        ellipse(-8, 25, 8, 5);
+        ellipse(8, 25, 8, 5);
+
+        circle(-24, 5, 10);
+        circle(24, 5, 10);
+
+    }
+
+    spinMore(){
+
+        this.rotSpeed = random(-2, 2);
+
+    }
+
+    slowSpin(){
+
+        this.rotSpeed = random(-0.5, 0.5);
+
+    }
+
+    changeScale(){
+
+        this.sc = random(0.6, 1.4);
+
+    }
+
+    changeColor(){
+
+        this.bodycolor = color(
+            random(255),
+            random(255),
+            random(255)
+        );
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>

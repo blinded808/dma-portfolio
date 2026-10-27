@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Coding Art | Alyicia Wright</title>
+
+<style>
+
+:root {
+    --header-image: url('images/numbers.gif');
+    --body-bg-image: url('images/static.jpeg');
+    --footer-image: url('images/numbers.gif');
+}
+
+@font-face {
+    font-family: Nunito;
+    src: url('https://sadhost.neocities.org/fonts/Nunito-Regular.ttf');
+}
+
+@font-face {
+    font-family: Nunito;
+    src: url('https://sadhost.neocities.org/fonts/Nunito-Bold.ttf');
+    font-weight: bold;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    background-color: #080c21;
+    background-image: var(--body-bg-image);
+    background-size: 65px;
+    color: #d1c711;
+
+    cursor: url('images/cursor.png'), auto;
+}
+
+#container {
+    width: min(100%, 1300px);
+    margin: 0 auto;
+}
+
+/* HEADER */
+
+#header {
+    width: 100%;
+    height: clamp(120px, 22vw, 200px);
+
+    background-image:
+    linear-gradient(
+        rgba(8,12,33,.5),
+        rgba(8,12,33,.5)
+    ),
+    var(--header-image);
+
+    background-size: cover;
+    background-position: center;
+}
+
+/* NAVIGATION */
+
+#navbar {
+    background-color: #080c21;
+    margin-bottom: 10px;
+}
+
+#navbar ul {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#navbar li {
+    padding: 12px 6px;
+}
+
+#navbar a {
+    color: #ED64F5;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+#navbar a:hover {
+    color: #0ffff0;
+    text-decoration: underline;
+    cursor: url('images/pointer.png'), pointer;
+}
+
+/* FLEX LAYOUT */
+
+#flex {
+    display: flex;
+    gap: 10px;
+}
+
+/* SIDEBAR */
+
+#leftSidebar {
+    flex: 0 0 200px;
+    background-color: #080c21;
+    padding: 20px;
+    text-align: center;
+}
+
+.box {
+    background-color: #13092D;
+    border: 1px solid #0ffff0;
+    padding: 10px;
+}
+
+.box ul {
+    padding-left: 15px;
+    text-align: left;
+}
+
+.box li {
+    margin-bottom: 8px;
+}
+
+/* MAIN */
+
+main {
+    flex: 1;
+    background-color: #43256E;
+    padding: 30px;
+}
+
+.gallery-page {
+    text-align: center;
+}
+
+.gallery-page h1 {
+    color: #e503a2;
+    margin-bottom: 20px;
+}
+
+.gallery-description {
+    max-width: 850px;
+    margin: 0 auto 60px;
+}
+
+/* PROJECTS */
+
+.project {
+    margin-bottom: 100px;
+}
+
+.project h2 {
+    color: #e503a2;
+    margin-bottom: 20px;
+}
+
+.project-image {
+    width: 100%;
+    max-width: 1000px;
+    display: block;
+    margin: 0 auto 25px;
+
+    border: 2px solid #0ffff0;
+
+    opacity: .90;
+
+    transition:
+        transform .3s ease,
+        opacity .3s ease;
+}
+
+.project-image:hover {
+    opacity: 1;
+    transform: scale(1.02);
+}
+
+.project p {
+    max-width: 850px;
+    margin: 0 auto 20px;
+}
+
+.project-button {
+    display: inline-block;
+
+    padding: 12px 25px;
+
+    background-color: #13092D;
+
+    border: 2px solid #0ffff0;
+
+    color: #d1c711;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: .3s;
+}
+
+.project-button:hover {
+    background-color: #0ffff0;
+    color: #080c21;
+
+    cursor: url('images/pointer.png'), pointer;
+}
+
+/* FOOTER */
+
+footer {
+    background-image:
+    linear-gradient(
+        rgba(8,12,33,.5),
+        rgba(8,12,33,.5)
+    ),
+    var(--footer-image);
+
+    background-size: cover;
+    background-position: center;
+
+    min-height: 100px;
+}
+
+/* MOBILE */
+
+@media only screen and (max-width: 700px) {
+
+    #flex {
+        flex-direction: column;
+    }
+
+    #leftSidebar {
+        width: 100%;
+    }
+
+    main {
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="container">
+
+    <div id="header"></div>
+
+    <nav id="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="coding.html">Coding Art</a></li>
+            <li><a href="video.html">Video Art</a></li>
+            <li><a href="2d.html">2D Works</a></li>
+            <li><a href="photography.html">Photography</a></li>
+            <li><a href="editorial.html">Editorial Art</a></li>
+        </ul>
+    </nav>
+
+    <div id="flex">
+
+        <aside id="leftSidebar">
+
+            <img src="images/star.gif"
+                 alt="star"
+                 width="48"
+                 height="48">
+
+            <h2>Coding Art</h2>
+
+            <div class="box">
+                <ul>
+                    <li>2 Website Projects</li>
+                    <li>1 Code Art Piece</li>
+                    <li>2 Interactive p5.js Works</li>
+                    <li>Creative Coding Experiments</li>
+                </ul>
+            </div>
+
+            <h2>Explore!</h2>
+
+            <img src="images/star.gif"
+                 alt="star"
+                 width="48"
+                 height="48">
+
+        </aside>
+
+        <main>
+
+            <div class="gallery-page">
+
+                <h1>Coding Art</h1>
+
+                <p class="gallery-description">
+                    A collection of websites, interactive experiences,
+                    p5.js experiments, and creative coding projects.
+                </p>
+
+                <!-- WEBSITE PROJECT 1 -->
+
+                <div class="project">
+
+                    <h2>Net Art</h2>
+
+                    <img src="images/ocean.jpeg"
+                         alt="Net Art"
+                         class="project-image">
+
+                    <p>
+                        Made for Art 74, this project allowed me to dive into my first time creating a website and learning about HTML through Github and Notepad+++.
+                        Titled "Welcome to the Deep Blue Sea."
+                    </p>
+
+                    <a href="https://blinded808.github.io/index.html"
+                       target="_blank"
+                       class="project-button">
+                       Visit Website
+                    </a>
+
+                </div>
+
+                <!-- WEBSITE PROJECT 2 -->
+
+                <div class="project">
+
+                    <h2>Net Art 2</h2>
+
+                    <img src="images/wand_thumb.jpg"
+                         alt="Quest for the Magic Wand"
+                         class="project-image">
+
+                    <p>
+                        Made for Art 74, this website was made as project that I wanted to continue as I grow a bigger interest in using HTML, CSS, and Javascript. Although this work is not yet complete, I will come back to it to continue it to see how far
+                        I have came with my artwork. Made with Notepad+++, Github, and Photoshop, this site is an interactive 
+                        net art where you go on a quest to look for the magic wand. 
+                    </p>
+
+                    <a href="https://blinded808.github.io/dma-git.github-final-project/"
+                       target="_blank"
+                       class="project-button">
+                       Visit Website
+                    </a>
+
+                </div>
+
+                <!-- CODE ART -->
+
+                <div class="project">
+
+                    <h2>Code Art Piece</h2>
+
+                    <img src="works/selfportrait.png"
+                         alt="Code Art Piece"
+                         class="project-image">
+
+                    <p>
+                       Made in Art 74, this was my first time making images from code by itself and as a result, I created a self-portrait.
+                    </p>
+
+                </div>
+
+                <!-- P5 PROJECT 1 -->
+
+                <div class="project">
+
+                    <h2>Penguin Playground</h2>
+
+                    <img src="images/penguins.png"
+                         alt="Interactive p5.js Work One"
+                         class="project-image">
+
+                    <p>
+                      An interactive p5.js artwork featuring animated penguins that move throughout the canvas. Users can add penguins with mouse clicks and alter their behavior through keyboard interactions.
+                    </p>
+
+                    <a href="project1.html"
+                       target="_blank"
+                       class="project-button">
+                       Launch Interactive Work
+                    </a>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <footer></footer>
+
+</div>
+
+</body>
+</html>

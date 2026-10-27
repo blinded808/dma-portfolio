@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Alyicia Wright | Video Art</title>
+
+<style>
+
+:root {
+    --header-image: url('images/music_note.gif');
+    --body-bg-image: url('images/static.jpeg');
+    --footer-image: url('images/music_note.gif');
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #080c21;
+    background-image: var(--body-bg-image);
+    background-size: 65px;
+    color: #d1c711;
+}
+
+#container {
+    width: min(100%, 1300px);
+    margin: 0 auto;
+}
+
+#header {
+    width: 100%;
+    height: clamp(120px, 22vw, 200px);
+    background-image:
+        linear-gradient(
+            rgba(8,12,33,0.5),
+            rgba(8,12,33,0.5)
+        ),
+        var(--header-image);
+    background-size: cover;
+    background-position: center;
+}
+
+#navbar {
+    background-color: #080c21;
+    margin-bottom: 10px;
+}
+
+#navbar ul {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#navbar li {
+    padding: 10px;
+}
+
+#navbar a {
+    color: #ED64F5;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#navbar a:hover {
+    color: #0ffff0;
+    text-decoration: underline;
+    cursor: url('images/pointer.png'), pointer;
+}
+
+#flex {
+    display: flex;
+    gap: 10px;
+}
+
+#leftSidebar {
+    flex: 0 0 220px;
+    background-color: #080c21;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    flex: 1;
+    background-color: #43256E;
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+    color: #e503a2;
+}
+
+h2 {
+    text-align: center;
+    color: #e503a2;
+}
+
+p {
+    text-align: center;
+}
+
+.box {
+    background-color: #13092D;
+    border: 1px solid #0ffff0;
+    padding: 10px;
+}
+
+.video-player {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+#featuredVideo {
+    width: 100%;
+    max-width: 900px;
+    border: 2px solid #0ffff0;
+    background: black;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.video-card {
+    width: 420px;
+    min-height: 180px;
+    background-color: #13092D;
+    border: 2px solid #0ffff0;
+    padding: 15px;
+    text-align: center;
+    cursor:  url('images/cursor.png'), auto;
+    transition: 0.3s;
+}
+
+.video-card:hover {
+    transform: scale(1.05);
+    border-color: #ED64F5;
+    box-shadow: 0 0 15px #ED64F5;
+    cursor: url('images/pointer.png'), pointer;
+}
+
+.video-card h3 {
+    color: #e503a2;
+}
+
+footer {
+    background-image:
+        linear-gradient(
+            rgba(8,12,33,0.5),
+            rgba(8,12,33,0.5)
+        ),
+        var(--footer-image);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    text-align: center;
+}
+
+@media screen and (max-width:700px) {
+
+    #flex {
+        flex-direction: column;
+    }
+
+    #leftSidebar {
+        width: 100%;
+    }
+
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .video-card {
+        width: 90%;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="container">
+
+<div id="header"></div>
+
+<nav id="navbar">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="coding.html">Coding Art</a></li>
+<li><a href="video.html">Video Art</a></li>
+<li><a href="2d.html">2D Works</a></li>
+<li><a href="photography.html">Photography</a></li>
+<li><a href="editorial.html">Editorial Art</a></li>
+</ul>
+</nav>
+
+<div id="flex">
+
+<aside id="leftSidebar">
+
+<img src="images/star.gif" width="48" height="48">
+
+<h2>Video Collection</h2>
+
+<div class="box">
+<p>
+Select one of the video projects to view it in the player.
+</p>
+</div>
+
+<br>
+
+<img src="images/star.gif" width="48" height="48">
+
+</aside>
+
+<main>
+
+<h1>Video Art</h1>
+
+
+<div class="video-player">
+
+<video id="featuredVideo" controls>
+<source src="videos/video1.mp4" type="video/mp4">
+</video>
+
+</div>
+
+<div class="gallery">
+
+<div class="video-card"
+onclick="changeVideo('works/video_1.mp4')">
+
+<h3>Untitled (2026)</h3>
+
+<p>
+Work for Art 75, I went to different locations to record nature and arrange them into
+to story mimicing a nature documentary, by experimenting with transitions, audio and working
+in Adobe Premiere. 
+</p>
+
+</div>
+
+<div class="video-card"
+onclick="changeVideo('works/video_2.mp4')">
+
+
+<h3>A Keepsake (2026) </h3>
+
+<p>
+For this assignment made for Art 75, I decided to make a memorial video of a trip that I went 
+with my friend with to Japan. All the vidoes have been recorded personally and I used the song Passenger's Side by
+Smallpools. I wanted to create kind of a music video combining all the memories documented to
+be something memorable to look back on.
+</p>
+
+</div>
+
+<div class="video-card"
+onclick="changeVideo('works/video_3.mp4')">
+
+
+<h3>Our Ecosystem (2026)</h3>
+
+<p>
+Made for Art 75, I have took videos from Pexel and Pixabay to make 
+a film documenting the different aspects of our environment with a transitional video and 
+ambience music. My goal was to try to make the videos feel like the transitons 
+connected to one another in Adobe Premiere. 
+</p>
+
+</div>
+
+</div>
+
+</main>
+
+</div>
+
+<footer></footer>
+
+</div>
+
+<script>
+
+function changeVideo(videoSource) {
+
+    const player = document.getElementById("featuredVideo");
+
+    player.src = videoSource;
+
+    player.load();
+
+    player.play();
+
+}
+
+</script>
+
+</body>
+</html>

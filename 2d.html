@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>2D Works | Alyicia Wright</title>
+
+<style>
+
+:root {
+    --header-image: url('images/bubbles.gif');
+    --footer-image: url('images/bubbles.gif');
+    --body-bg-image: url('images/static.jpeg');
+}
+
+@font-face {
+    font-family: Nunito;
+    src: url('https://sadhost.neocities.org/fonts/Nunito-Regular.ttf');
+}
+
+@font-face {
+    font-family: Nunito;
+    src: url('https://sadhost.neocities.org/fonts/Nunito-Bold.ttf');
+    font-weight: bold;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    background-color: #080c21;
+    background-image: var(--body-bg-image);
+    background-size: 65px;
+    color: #d1c711;
+    cursor: url('images/cursor.png'), auto;
+}
+
+/* MAIN CONTAINER */
+
+#container {
+    width: min(100%, 1300px);
+    margin: 0 auto;
+}
+
+/* HEADER */
+
+#header {
+    width: 100%;
+    height: clamp(120px, 22vw, 200px);
+
+    background-image:
+    linear-gradient(
+        rgba(8,12,33,.5),
+        rgba(8,12,33,.5)
+    ),
+    var(--header-image);
+
+    background-size: cover;
+    background-position: center;
+}
+
+/* NAVIGATION */
+
+#navbar {
+    background-color: #080c21;
+    margin-bottom: 10px;
+}
+
+#navbar ul {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+#navbar li {
+    padding: 12px 6px;
+}
+
+#navbar a {
+    color: #ED64F5;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#navbar a:hover {
+    color: #0ffff0;
+    text-decoration: underline;
+    cursor: url('images/pointer.png'), pointer;
+}
+
+/* PAGE LAYOUT */
+
+#flex {
+    display: flex;
+    gap: 10px;
+}
+
+/* SIDEBAR */
+
+#leftSidebar {
+    flex: 0 0 200px;
+
+    background-color: #080c21;
+
+    padding: 20px;
+    text-align: center;
+}
+
+.box {
+    background-color: #13092D;
+    border: 1px solid #0ffff0;
+    padding: 10px;
+}
+
+.box ul {
+    padding-left: 15px;
+}
+
+.box li {
+    margin-bottom: 8px;
+}
+
+/* MAIN CONTENT */
+
+main {
+    flex: 1;
+    background-color: #43256E;
+    padding: 30px;
+}
+
+.gallery-page {
+    width: 100%;
+    text-align: center;
+}
+
+.gallery-page h1 {
+    color: #e503a2;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.gallery-description {
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+/* ARTWORKS */
+
+.artwork {
+    margin-bottom: 90px;
+}
+
+.artwork h2 {
+    color: #e503a2;
+    margin-bottom: 20px;
+}
+
+.artwork-image {
+    display: block;
+
+    width: 100%;
+    max-width: 1000px;
+
+    margin: 0 auto 25px;
+
+    border: 2px solid #0ffff0;
+
+    opacity: .90;
+
+    transition:
+        transform .3s ease,
+        opacity .3s ease;
+}
+
+.artwork-image:hover {
+    transform: scale(1.02);
+    opacity: 1;
+
+    cursor: url('images/pointer.png'), pointer;
+}
+
+.artwork p {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+/* FOOTER */
+
+footer {
+    min-height: 100px;
+
+    background-image:
+    linear-gradient(
+        rgba(8,12,33,.5),
+        rgba(8,12,33,.5)
+    ),
+    var(--footer-image);
+
+    background-position: center;
+    background-size: cover;
+
+    text-align: center;
+    padding: 20px;
+}
+
+/* HEADING COLORS */
+
+h1,
+h2,
+h3 {
+    color: #e503a2;
+}
+
+strong {
+    color: #deda65;
+}
+
+/* MOBILE */
+
+@media only screen and (max-width: 700px) {
+
+    #flex {
+        flex-direction: column;
+    }
+
+    #leftSidebar {
+        width: 100%;
+    }
+
+    main {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .artwork-image {
+        width: 100%;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="container">
+
+    <div id="header"></div>
+
+    <nav id="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="coding.html">Coding Art</a></li>
+            <li><a href="video.html">Video Art</a></li>
+            <li><a href="2d.html">2D Works</a></li>
+            <li><a href="photography.html">Photography</a></li>
+            <li><a href="editorial.html">Editorial Art</a></li>
+        </ul>
+    </nav>
+
+    <div id="flex">
+
+        <aside id="leftSidebar">
+
+            <img src="images/star.gif"
+                 alt="star"
+                 width="48"
+                 height="48">
+
+            <h2>2D Collection</h2>
+
+            <div class="box">
+                <ul>
+                    <li>Digital Illustration</li>
+                    <li>Mixed Media</li>
+                    <li>Adobe Illustrator/ Adobe Photoshop</li>
+                    <li>Personal Projects</li>
+                </ul>
+            </div>
+
+            <h2>Enjoy Exploring!</h2>
+
+            <img src="images/star.gif"
+                 alt="star"
+                 width="48"
+                 height="48">
+
+        </aside>
+
+        <main>
+
+            <div class="gallery-page">
+
+                <h1>2D Works</h1>
+
+                <p class="gallery-description">
+                    A collection of selected two-dimensional works,
+                    illustrations, and visual experiments.
+                </p>
+
+                <div class="artwork">
+
+                    <h2>Artwork One</h2>
+
+                    <img
+                        src="works/artwork_1.jpg"
+                        alt="Artwork One (2026)"
+                        class="artwork-image">
+
+                    <p>
+                    Made in Clip Studio Paint and Adobe Photoshop, this artwork captures how we deprived ourselves of technology and this can be highlighted from a person staring through a reflection of who they use to be. 
+                    </p>
+
+                </div>
+
+                <div class="artwork">
+
+                    <h2>Artwork Two</h2>
+
+                    <img
+                        src="works/artwork_2.jpg"
+                        alt="Artwork Two (2025)"
+                        class="artwork-image">
+
+                    <p>
+                     Made in Adobe Photoshop, this image of a woman made from the brush tool is a study I did to improve drawing anatomy.
+                    </p>
+
+                </div>
+
+                <div class="artwork">
+
+                    <h2>Artwork Three</h2>
+
+                    <img
+                        src="works/artwork3.jpg"
+                        alt="Artwork Three (2026)"
+                        class="artwork-image">
+
+                    <p>
+                    Made in Adobe Illustrator, this artwork made from the pen tool is presented as a sticker complimenting how we should let the grim reaper come after us.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <footer></footer>
+
+</div>
+
+</body>
+</html>

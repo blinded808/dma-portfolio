@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Alyicia Wright's Portfolio</title>
+
+    <style>
+        :root {
+            --header-image: url('images/glitch.gif');
+            --body-bg-image: url('images/static.jpeg');
+			--footer-image: url('images/glitch.gif');
+            --content: #43256E;
+        }
+
+        @font-face {
+            font-family: Nunito;
+            src: url('https://sadhost.neocities.org/fonts/Nunito-Regular.ttf');
+        }
+
+        @font-face {
+            font-family: Nunito;
+            src: url('https://sadhost.neocities.org/fonts/Nunito-Bold.ttf');
+            font-weight: bold;
+        }
+
+        @font-face {
+            font-family: Nunito;
+            src: url('https://sadhost.neocities.org/fonts/Nunito-Italic.ttf');
+            font-style: italic;
+        }
+
+        @font-face {
+            font-family: Nunito;
+            src: url('https://sadhost.neocities.org/fonts/Nunito-BoldItalic.ttf');
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            margin: 0;
+            background-color: #080c21;
+            background-size: 65px;
+            color: #d1c711;
+            background-image: var(--body-bg-image);
+
+		    cursor: url('images/cursor.png'), auto;
+        }
+
+        /* Main website container */
+        #container {
+            width: min(100%, 1300px);
+            margin: 0 auto;
+        }
+
+        #container a {
+            color: #080c21;
+            font-weight: bold;
+        }
+
+        /* Animated header */
+        #header {
+    width: 100%;
+    height: clamp(120px, 22vw, 200px);
+    background-image:
+        linear-gradient(
+            rgba(8,12,33,0.5),
+            rgba(8,12,33,0.5)
+        ),
+        var(--header-image);
+    background-size: cover;
+    background-position: center;
+        }
+
+        /* Scrolling warning banner */
+        #headerArea {
+            width: 100%;
+        }
+
+        #warningBar {
+            min-height: 40px;
+            width: 100%;
+            background-color: #080c21;
+            overflow: hidden;
+        }
+
+        #warningBar img {
+            height: 25px;
+            vertical-align: middle;
+        }
+
+        /* Navigation */
+        #navbar {
+            min-height: 40px;
+            background-color: #080c21;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        #navbar ul {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        #navbar li {
+            padding: 10px 5px;
+        }
+
+        #navbar li a {
+            color: #ED64F5;
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        #navbar li a:hover {
+            color: #0ffff0;
+            text-decoration: underline;
+			    cursor: url('images/pointer.png'), pointer;
+        }
+
+        /* Main layout: sidebar on the left, content on the right */
+        #flex {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            gap: 10px;
+            width: 100%;
+            min-width: 0;
+        }
+
+        /* Sidebar */
+        #leftSidebar {
+            order: 1;
+            flex: 0 0 200px;
+            width: 200px;
+            margin-right: 0;
+            padding: 20px;
+            background-color: #080c21;
+            font-size: smaller;
+            position: relative;
+            z-index: 2;
+			text-align: center;
+        }
+
+        /* Main content */
+        main {
+            order: 2;
+            flex: 1 1 0;
+            min-width: 0;
+            padding: 20px;
+            background-color: #43256E;
+            position: relative;
+            z-index: 1;
+ 			display: flex;
+    		justify-content: center;
+   			align-items: center;
+        }
+
+        /* About Me: text on the left, witch on the right */
+.about-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.about-text {
+    flex: 1;
+    text-align: center;
+}
+
+.about-image {
+    flex: 0 0 500px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.about-image img {
+    max-width: 600px;
+    height: auto;
+}
+
+        /* Keep all content and media inside their layout columns */
+        img,
+        video,
+        iframe {
+            max-width: 100%;
+        }
+
+        main,
+        aside,
+        .about-text,
+        .about-image {
+            overflow-wrap: anywhere;
+        }
+
+        /* Keep both stop signs at their original dimensions */
+        .stop-sign {
+            width: 48px;
+            height: 48px;
+            max-width: none;
+            display: block;
+			margin: 0 auto;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #e503a2;
+        }
+
+        h1 {
+            font-size: 25px;
+            text-align: center;
+        }
+
+        h2,
+        h3 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        strong {
+            color: #deda65;
+        }
+
+        /* Sidebar box */
+        .box {
+            background-color: #13092D;
+            border: 1px solid #0ffff0;
+            padding: 10px;
+        }
+
+        .box ul {
+            padding-left: 10px;
+        }
+
+        .box li {
+            margin-bottom: 8px;
+        }
+
+        /* Footer */
+        footer {
+    background-image:
+        linear-gradient(
+            rgba(8,12,33,0.5),
+            rgba(8,12,33,0.5)
+        ),
+        var(--footer-image);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    text-align: center;
+}
+
+        /* Top bar, if used later */
+        #topBar {
+            width: 100%;
+            height: 30px;
+            padding: 10px;
+            font-size: smaller;
+            background-color: #deda65;
+        }
+
+        /* Tablets and smaller laptops */
+        @media only screen and (max-width: 700px) {
+            #flex {
+                flex-wrap: wrap;
+            }
+
+            main {
+                order: 1;
+                flex: 1 1 100%;
+                width: 100%;
+            }
+
+            #leftSidebar {
+                order: 2;
+                flex: 1 1 100%;
+                width: 100%;
+            }
+
+            #navbar ul {
+                flex-wrap: wrap;
+                gap: 0 8px;
+            }
+        }
+
+        /* Phones */
+        @media only screen and (max-width: 480px) {
+            #navbar li {
+                padding: 8px 4px;
+            }
+
+            #navbar li a {
+                font-size: 14px;
+            }
+
+            main {
+                padding: 12px;
+            }
+
+            .about-layout {
+                gap: 8px;
+            }
+
+            .about-text {
+                flex: 1 1 58%;
+            }
+
+            .about-image {
+                flex: 0 1 42%;
+            }
+
+            .about-image img {
+                width: 100%;
+                max-width: 180px;
+                height: auto;
+            }
+
+            .about-text h3 {
+                font-size: 16px;
+            }
+
+            h1 {
+                font-size: clamp(21px, 6vw, 25px);
+            }
+
+            .stop-sign {
+                width: 40px;
+                height: 40px;
+            }
+
+            #leftSidebar {
+                padding: 14px;
+            }
+        }
+
+        /* Very narrow phones: stack the About Me text and image */
+        @media only screen and (max-width: 360px) {
+            .about-layout {
+                flex-direction: column;
+            }
+
+            .about-text,
+            .about-image {
+                flex: 1 1 auto;
+                width: 100%;
+            }
+
+            .about-image img {
+                max-width: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="container">
+
+        <!-- Animated header -->
+        <div id="header"></div>
+
+        <!-- Scrolling warning banner -->
+        <div id="headerArea">
+            <nav id="warningBar">
+                <marquee>
+                    <img src="images/siren.gif" alt="">
+                    <img src="images/caution.png" alt="">
+                    <img src="images/caution.png" alt="">
+                    <img src="images/caution.png" alt="">
+                    <img src="images/caution.png" alt="">
+                    <img src="images/siren.gif" alt="">
+                    <img src="images/caution.png" alt="">
+                    <img src="images/caution.png" alt="">
+                    <img src="images/caution.png" alt="">
+                    <img src="images/caution.png" alt="">
+                    <img src="images/siren.gif" alt="">
+                    <img src="images/caution.png" alt="">
+                    <img src="images/caution.png" alt="">
+                    <img src="images/caution.png" alt="">
+                    <img src="images/caution.png" alt="">
+                    <img src="images/siren.gif" alt="">
+                </marquee>
+            </nav>
+        </div>
+
+        <!-- Navigation links -->
+        <nav id="navbar">
+            <ul>
+
+                <li><a href="index.html">Home</a></li>
+                <li><a href="coding.html">Coding Art</a></li>
+                <li><a href="video.html">Video Art</a></li>
+                <li><a href="2d.html">2D Works</a></li>
+                <li><a href="photography.html">Photography</a></li>
+                <li><a href="editorial.html">Editoial Art</a></li>
+            </ul>
+        </nav>
+
+        <!-- Sidebar and main content -->
+        <div id="flex">
+
+            <!-- Sidebar -->
+            <aside id="leftSidebar">
+
+                <img src="images/star.gif"
+                     alt="Spinning star"
+                     style="width:48px;height:48px;">
+
+                <h2>Types of Works You'll See</h2>
+
+                <div class="box">
+                    <ul>
+                        <li>Works included from Art 74 and 75</li>
+                        <li>Works included from Art 101</li>
+                        <li>Additional Personal Projects included</li>
+                        <li>Will have one work that may still be under construction</li>
+                    </ul>
+                </div>
+
+                <h2>Have Fun!</h2>
+
+                <img src="images/star.gif"
+                     alt="Spinning star"
+                     style="width:48px;height:48px;">
+
+            </aside>
+
+            <!-- Main content -->
+            <main>
+
+                <div class="about-layout">
+
+                    <!-- About Me text -->
+                    <div class="about-text">
+
+                        <img src="images/blinking_stop_sign.gif"
+                             alt="Blinking stop sign"
+                             class="stop-sign">
+
+                        <h1>About Me</h1>
+
+                        <h3>
+                            <strong>Hello! My name is Alyicia Wright!</strong>
+                        </h3>
+
+                        <p></p>
+
+						  <p></p>
+
+						    <p>I am a digital media artist whose practice combines illustration, photography, video, design, and creative coding. My work explores the relationship between technology, creativity, and audience engagement through both static and interactive experiences. Using tools such as web design, p5.js, and digital imaging, I create projects that encourage exploration, participation, and curiosity.</p>
+
+							  <p></p>
+
+							    <p>Across my work, I investigate how visual storytelling and interactivity can shape the way people experience art. By blending traditional artistic principles with emerging technologies, I create pieces that challenge viewers to engage with art in dynamic and meaningful ways. Whether through digital illustrations, experimental websites, or interactive coding projects, my goal is to create experiences that are both visually engaging and thought-provoking</p>
+
+								  <p></p>
+
+								 	 <p></p>
+
+									 	-<p></p>
+								
+								  
+                        <img src="images/blinking_stop_sign.gif"
+                             alt="Blinking stop sign"
+                             class="stop-sign">
+
+                    </div>
+
+                    <!-- Witch image on the right -->
+                    <div class="about-image">
+
+                        <img src="images/witch.png"
+                             alt="Witch">
+
+                    </div>
+
+                </div>
+
+            </main>
+
+        </div>
+
+        <footer id="footer"></footer>
+    </div>
+
+</body>
+</html>
