@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Warning</title>
+
+<style>
+
+body {
+
+    margin: 0;
+
+    background: #080c21;
+    background-image: url('images/static.jpeg');
+    background-size: 65px;
+
+    font-family: Nunito, sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+
+    cursor: url('images/cursor.png'), auto;
+}
+
+/* SCANLINES */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+    repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(237,100,245,0.04) 2px,
+        rgba(237,100,245,0.04) 4px
+    );
+
+}
+
+/* BOX */
+
+.warning-box {
+
+    width: min(90%, 750px);
+
+    padding: 40px;
+
+    background: #13092D;
+
+    border: 3px solid #0ffff0;
+
+    text-align: center;
+
+    animation: warningGlow 0.8s infinite alternate;
+
+}
+
+/* TITLE */
+
+.warning-title {
+
+    color: #e503a2;
+
+    font-size: clamp(2rem, 5vw, 4rem);
+
+    margin-bottom: 25px;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 10px #e503a2,
+        0 0 20px #ED64F5,
+        0 0 40px #ED64F5;
+
+    animation:
+        flashText .4s infinite,
+        glitch 1s infinite;
+}
+
+/* PARAGRAPHS */
+
+.warning-box p {
+
+    color: #d1c711;
+
+    line-height: 1.8;
+
+    max-width: 650px;
+
+    margin: 0 auto 20px;
+}
+
+/* BIG WARNING TEXT */
+
+.proceed-text {
+
+    color: #ED64F5;
+
+    font-size: 1.4rem;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    text-shadow:
+        0 0 10px #e503a2,
+        0 0 20px #ED64F5;
+
+    animation: flashText 0.7s infinite;
+}
+
+/* BUTTON */
+
+.enter-button {
+
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 15px 40px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    background: #080c21;
+
+    border: 2px solid #0ffff0;
+
+    color: #0ffff0;
+
+    transition: .3s;
+
+    cursor: url('images/pointer.png'), pointer;
+}
+
+.enter-button:hover {
+
+    background: #0ffff0;
+
+    color: #080c21;
+
+    transform: scale(1.05);
+
+    box-shadow:
+        0 0 20px #0ffff0,
+        0 0 40px #0ffff0;
+}
+
+/* FLASHING */
+
+@keyframes flashText {
+
+    0%{
+        opacity:1;
+    }
+
+    50%{
+        opacity:.2;
+    }
+
+    100%{
+        opacity:1;
+    }
+
+}
+
+/* GLOW */
+
+@keyframes warningGlow {
+
+    from {
+
+        box-shadow:
+            0 0 15px #e503a2,
+            0 0 30px #e503a2,
+            0 0 60px #43256E;
+
+    }
+
+    to {
+
+        box-shadow:
+            0 0 20px #ED64F5,
+            0 0 40px #ED64F5,
+            0 0 80px #43256E;
+
+    }
+
+}
+
+/* GLITCH */
+
+@keyframes glitch {
+
+    0% {
+        transform: translate(0);
+    }
+
+    10% {
+        transform: translate(-3px,2px);
+    }
+
+    20% {
+        transform: translate(3px,-2px);
+    }
+
+    30% {
+        transform: translate(-2px,1px);
+    }
+
+    40% {
+        transform: translate(2px,-1px);
+    }
+
+    50% {
+        transform: translate(-4px,2px);
+    }
+
+    60% {
+        transform: translate(4px,-2px);
+    }
+
+    70% {
+        transform: translate(-3px,-1px);
+    }
+
+    80% {
+        transform: translate(3px,1px);
+    }
+
+    90% {
+        transform: translate(-1px,1px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="warning-box">
+
+    <h1 class="warning-title">
+        SIGNAL DETECTED
+    </h1>
+
+    <p>
+        Unauthorized signals have been detected beyond this point.
+    </p>
+
+    <p>
+        Interactive entities, corrupted visuals,
+        creative coding experiments, animated media,
+        and digital disturbances may occur throughout this archive.
+    </p>
+
+    <p class="proceed-text">
+        PROCEED IF YOU ACCEPT THE RISK
+    </p>
+
+    <a href="index.html" class="enter-button">
+        ENTER WEBSITE
+    </a>
+
+</div>
+
+</body>
+
+</html>
